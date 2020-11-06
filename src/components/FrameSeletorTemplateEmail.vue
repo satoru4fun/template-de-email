@@ -1,7 +1,8 @@
 <template>
     <div>
         {{ titulo }}
-        <SeletorTemplateEmail>
+        <SeletorTemplateEmail v-model="templateEmailSelecionado"></SeletorTemplateEmail>
+        {{ templateEmailSelecionado }}
     </div>
 </template>
 
@@ -11,7 +12,8 @@ import SeletorTemplateEmail from './SeletorTemplateEmail.vue'
 export default {
     data () {
         return {
-            titulo: 'Tipo de modelo'
+            titulo: 'Tipo de modelo',
+            templateEmailSelecionado: null
         }
     },
     components: {

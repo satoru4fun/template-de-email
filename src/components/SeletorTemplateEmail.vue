@@ -1,14 +1,14 @@
 <template>
     <div>
-        <select>
+        <select v-on:input="$emit('input', $event.target.value)">
             <option value="" disabled selected hidden>Escolha o tipo de modelo</option>
-            <option  v-for="modeloDeEmail in modelosDeEmail" v-bind:key="modeloDeEmail.id" :value="modeloDeEmail.descricao">{{ modeloDeEmail.descricao }}</option>
+            <option  v-for="templateDeEmail in templatesDeEmail" v-bind:key="templateDeEmail.id" :value="templateDeEmail.id">{{ templateDeEmail.descricao }}</option>
         </select>
     </div>
 </template>
 
 <script>
-import modelosDeEmail from '../data/ModelosDeEmail.json'
+import templatesDeEmail from '../data/TemplatesDeEmail.json'
 
 export default {
     data () {
@@ -16,7 +16,7 @@ export default {
         }
     },
     computed: {
-        modelosDeEmail: () => modelosDeEmail
+        templatesDeEmail: () => templatesDeEmail
     }
 }
 </script>
