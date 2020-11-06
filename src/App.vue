@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <SeletorTemplateEmail>
+    <FrameSeletorTemplateEmail>
   </div>
 </template>
 
 <script>
-import SeletorTemplateEmail from './components/SeletorTemplateEmail.vue'
+import FrameSeletorTemplateEmail from './components/FrameSeletorTemplateEmail.vue'
 
 export default {
   name: 'App',
   components: {
-    SeletorTemplateEmail
+    FrameSeletorTemplateEmail
   }
 }
 </script>

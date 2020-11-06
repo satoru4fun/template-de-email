@@ -1,0 +1,18 @@
+{
+    "DNS": {
+        "id": 1,
+        "descricao": "DNS"
+    },
+    "Firewall": {
+        "id": 2,
+        "descricao": "Firewall"
+    },
+    "ResultadoDiligencia": {
+        "id": 3,
+        "descricao": "Resultado de Diligência"
+    },
+    "ConviteGitHub": {
+        "id": 4,
+        "descricao": "Convite GitHub"
+    }
+}
