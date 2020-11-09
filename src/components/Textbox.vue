@@ -1,7 +1,7 @@
 <template>
     <div>
         <label>
-            CNAME:
+            {{ label }}
             <input type="text" v-on:input="$emit('input', $event.target.value)">
         </label>
     </div>
@@ -9,7 +9,9 @@
 
 <script>
 export default {
-    
+    props: {
+        label: String
+    }
 }
 </script>
 

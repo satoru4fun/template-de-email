@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <TextboxCname v-model="cname" v-on:input="$emit('input', modeloEmail)"></TextboxCname>
+            <Textbox label="CNAME" v-model="cname" v-on:input="$emit('input', modeloEmail)"></Textbox>
         </div>
         <div>
             <Checkbox label="Homologação" :isChecked="homologacaoChecado" v-model="homologacaoChecado" v-on:change="$emit('input', modeloEmail)"></Checkbox>
@@ -11,11 +11,6 @@
         </div>
     </div>
 <!--     
-        
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="dev" v-on:change="dns_gerar" v-model="modeloFormularioDNS.desenvolvimentoChecado">
-          <label class="form-check-label" for="dev">Dev</label>
-        </div>
         <div class="form-group">
           <label for="subdomain">Subdomínio:</label>
           <input type="text" id="subdomain" name="subdomain" class="form-control" 
@@ -35,12 +30,12 @@
 </template>
 
 <script>
-import TextboxCname from './TextboxCname.vue'
+import Textbox from './Textbox.vue'
 import Checkbox from './Checkbox.vue'
 
 export default {
     components: {
-        TextboxCname,
+        Textbox,
         Checkbox
     },
     data () {
