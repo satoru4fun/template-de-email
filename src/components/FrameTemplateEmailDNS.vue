@@ -1,8 +1,12 @@
 <template>
     <div>
-        DNS
-        <label for="cname">CNAME:</label>
-        <input type="text" id="cname" v-on:input="$emit('input', modeloEmail)">
+        <div>
+            <TextBoxCNAME v-model="cname" v-on:input="$emit('input', modeloEmail)"></TextBoxCNAME>
+        </div>
+        <div>
+            <label for="homologacao">Homologação</label>
+            <input type="checkbox" id="homologacao" v-on:change="$emit('input', modeloEmail)">
+        </div>
     </div>
 <!--     
         <div class="form-group form-check">
@@ -32,9 +36,20 @@
 </template>
 
 <script>
+import TextBoxCNAME from './TextBoxCNAME.vue'
+
 export default {
+    components: {
+        TextBoxCNAME
+    },
     data () {
         return {
+            cname: null,
+            subdominio: null,
+            homologacaoChecado: true,
+            desenvolvimentoChecado: true,
+            dnsInterno: null,
+            dnsExterno: null
         }
     },
     computed: {
@@ -43,9 +58,38 @@ export default {
                 assunto: null,
                 corpo: null
             }
-            modeloEmail.assunto = 'Assunto'
-            modeloEmail.corpo = 'Corpo'
+            modeloEmail.assunto = (this.cnameLimpo) ? 'Solicitação de DNS - ' + this.cnameLimpo.toUpperCase() : ''
+            modeloEmail.corpo = (this.url && this.homologacao && this.desenvolvimento && this.dnsInternoLimpo && this.dnsExternoLimpo) ? 'Prezada(o),'
+                + '<br><br>Favor alterar o CNAME:<ul><li>'
+                + this.url
+                + this.homologacao
+                + this.desenvolvimento
+                + '</li></ul><br>Para apontar para:<ul>'
+                + this.dnsInternoLimpo
+                + this.dnsExternoLimpo
+                + '</ul><br>' : ''
             return modeloEmail
+        },
+        url: function () {
+            return (this.cnameLimpo && this.subdominioLimpo) ? this.cnameLimpo + '" no subdomínio "' + this.subdominioLimpo + '"' : ''
+        },
+        cnameLimpo: function () {
+            return (this.cname) ? this.cname.trim() : ''
+        },
+        subdominioLimpo: function () {
+            return (this.subdominio) ? this.subdominio.trim() : ''
+        },
+        homologacao: function () {
+            return (this.homologacaoChecado) ? ',</li><li>"hom-' + this.url : ''
+        },
+        desenvolvimento: function () {
+            return (this.desenvolvimentoChecado) ? ',</li><li>"dev-' + this.url : ''
+        },
+        dnsInternoLimpo: function () {
+            return (this.dnsInterno) ? '<li>DNS interno = ' + this.dnsInterno.trim() + '</li>' : ''
+        },
+        dnsExternoLimpo: function () {
+            return (this.dnsExterno) ? '<li>DNS externo = ' + this.dnsExterno.trim() + '</li>' : ''
         }
     }
 }

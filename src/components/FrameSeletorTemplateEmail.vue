@@ -1,5 +1,5 @@
 <template>
-    <div >
+    <div>
         {{ titulo }}
         <SeletorTemplateEmail v-model="templateEmailSelecionado" v-on:input="$emit('input', templateEmailSelecionado)"></SeletorTemplateEmail>
     </div>
