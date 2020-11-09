@@ -9,24 +9,16 @@
         <div>
             <Checkbox label="Desenvolvimento" :isChecked="desenvolvimentoChecado" v-model="desenvolvimentoChecado" v-on:change="$emit('input', modeloEmail)"></Checkbox>
         </div>
+        <div>
+            <Textbox label="Subdomínio:" :defaultValue="subdominio" v-model="subdominio" v-on:input="$emit('input', modeloEmail)"></Textbox>
+        </div>
+        <div>
+            <Textbox label="DNS interno:" :defaultValue="dnsInterno" v-model="dnsInterno" v-on:input="$emit('input', modeloEmail)"></Textbox>
+        </div>
+        <div>
+            <Textbox label="DNS externo:" :defaultValue="dnsExterno" v-model="dnsExterno" v-on:input="$emit('input', modeloEmail)"></Textbox>
+        </div>
     </div>
-<!--     
-        <div class="form-group">
-          <label for="subdomain">Subdomínio:</label>
-          <input type="text" id="subdomain" name="subdomain" class="form-control" 
-                v-on:keyup="dns_gerar" v-model="modeloFormularioDNS.subdomain">
-        </div>
-        <div class="form-group">
-          <label for="dnsinterno">DNS interno:</label>
-          <input type="text" id="dnsinterno" name="dnsinterno" class="form-control" 
-                v-on:keyup="dns_gerar" v-model="modeloFormularioDNS.DNSInterno">
-        </div>
-        <div class="form-group">
-          <label for="dnsexterno">DNS externo:</label>
-          <input type="text" id="dnsexterno" name="dnsexterno" class="form-control" 
-                v-on:keyup="dns_gerar" v-model="modeloFormularioDNS.DNSExterno">
-        </div>
-    </div> -->
 </template>
 
 <script>
@@ -41,11 +33,11 @@ export default {
     data () {
         return {
             cname: null,
-            subdominio: null,
+            subdominio: 'sme.prefeitura.sp.gov.br',
             homologacaoChecado: true,
             desenvolvimentoChecado: true,
-            dnsInterno: null,
-            dnsExterno: null
+            dnsInterno: '10.50.1.189',
+            dnsExterno: '186.239.235.118'
         }
     },
     computed: {
