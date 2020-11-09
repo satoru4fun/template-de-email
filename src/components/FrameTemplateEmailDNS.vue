@@ -1,11 +1,10 @@
 <template>
     <div>
         <div>
-            <TextBoxCNAME v-model="cname" v-on:input="$emit('input', modeloEmail)"></TextBoxCNAME>
+            <TextboxCname v-model="cname" v-on:input="$emit('input', modeloEmail)"></TextboxCname>
         </div>
         <div>
-            <label for="homologacao">Homologação</label>
-            <input type="checkbox" id="homologacao" v-on:change="$emit('input', modeloEmail)">
+            <CheckboxHomologacao v-model="homologacaoChecado" v-on:change="$emit('input', modeloEmail)"></CheckboxHomologacao>
         </div>
     </div>
 <!--     
@@ -36,11 +35,13 @@
 </template>
 
 <script>
-import TextBoxCNAME from './TextBoxCNAME.vue'
+import TextboxCname from './TextboxCname.vue'
+import CheckboxHomologacao from './CheckboxHomologacao.vue'
 
 export default {
     components: {
-        TextBoxCNAME
+        TextboxCname,
+        CheckboxHomologacao
     },
     data () {
         return {
