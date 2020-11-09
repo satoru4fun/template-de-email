@@ -4,14 +4,14 @@
             <TextboxCname v-model="cname" v-on:input="$emit('input', modeloEmail)"></TextboxCname>
         </div>
         <div>
-            <CheckboxHomologacao v-model="homologacaoChecado" v-on:change="$emit('input', modeloEmail)"></CheckboxHomologacao>
+            <Checkbox label="Homologação" :isChecked="homologacaoChecado" v-model="homologacaoChecado" v-on:change="$emit('input', modeloEmail)"></Checkbox>
+        </div>
+        <div>
+            <Checkbox label="Desenvolvimento" :isChecked="desenvolvimentoChecado" v-model="desenvolvimentoChecado" v-on:change="$emit('input', modeloEmail)"></Checkbox>
         </div>
     </div>
 <!--     
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="hom" v-on:change="dns_gerar" v-model="modeloFormularioDNS.homologacaoChecado">
-          <label class="form-check-label" for="hom">Hom</label>
-        </div>
+        
         <div class="form-group form-check">
           <input type="checkbox" class="form-check-input" id="dev" v-on:change="dns_gerar" v-model="modeloFormularioDNS.desenvolvimentoChecado">
           <label class="form-check-label" for="dev">Dev</label>
@@ -36,12 +36,12 @@
 
 <script>
 import TextboxCname from './TextboxCname.vue'
-import CheckboxHomologacao from './CheckboxHomologacao.vue'
+import Checkbox from './Checkbox.vue'
 
 export default {
     components: {
         TextboxCname,
-        CheckboxHomologacao
+        Checkbox
     },
     data () {
         return {
