@@ -3,6 +3,7 @@
     <FrameSeletorTemplateEmail v-model="templateEmailSelecionado" v-on:input="limpaModeloEmail"></FrameSeletorTemplateEmail>
     <FrameTemplateEmailDns v-if="templateEmailSelecionado==1" v-model="modeloEmail"></FrameTemplateEmailDns>
     <FrameTemplateEmailFirewall v-if="templateEmailSelecionado==2" v-model="modeloEmail"></FrameTemplateEmailFirewall>
+    <FrameTemplateEmailResultadoDiligencia v-if="templateEmailSelecionado==3" v-model="modeloEmail"></FrameTemplateEmailResultadoDiligencia>
     {{ modeloEmail }}
   </div>
 </template>
@@ -11,6 +12,7 @@
 import FrameSeletorTemplateEmail from './components/FrameSeletorTemplateEmail.vue'
 import FrameTemplateEmailDns from './components/FrameTemplateEmailDns.vue'
 import FrameTemplateEmailFirewall from './components/FrameTemplateEmailFirewall.vue'
+import FrameTemplateEmailResultadoDiligencia from './components/FrameTemplateEmailResultadoDiligencia.vue'
 
 export default {
   name: 'App',
@@ -24,7 +26,8 @@ export default {
   components: {
     FrameSeletorTemplateEmail,
     FrameTemplateEmailDns,
-    FrameTemplateEmailFirewall
+    FrameTemplateEmailFirewall,
+    FrameTemplateEmailResultadoDiligencia
   },
   methods: {
     limpaModeloEmail: function () {

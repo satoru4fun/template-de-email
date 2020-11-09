@@ -1,0 +1,12 @@
+{
+    "Feminino": {
+        "id": 1,
+        "descricao": "Feminino",
+        "artigo": "a"
+    },
+    "Masculino": {
+        "id": 2,
+        "descricao": "Masculino",
+        "artigo": "o"
+    }
+}

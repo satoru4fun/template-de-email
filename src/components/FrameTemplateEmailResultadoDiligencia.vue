@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <Textbox label="Gênero:" v-model="genero" v-on:input="$emit('input', modeloEmail)"></Textbox>
+            <SeletorGenero v-model="generoSelecionado" v-on:input="$emit('input', modeloEmail)"></SeletorGenero>
         </div>
         <div>
             <Textbox label="Destino:" v-model="enderecoDestino" v-on:input="$emit('input', modeloEmail)"></Textbox>
@@ -16,11 +16,13 @@
 </template>
 
 <script>
+import SeletorGenero from './SeletorGenero.vue'
 import Textbox from './Textbox.vue'
 import Checkbox from './Checkbox.vue'
 
 export default {
     components: {
+        SeletorGenero,
         Textbox,
         Checkbox
     },

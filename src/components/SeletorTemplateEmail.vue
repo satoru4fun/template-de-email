@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Seletor :defaultValue="defaultValue" :listaOpcoes="templatesDeEmail" v-model="templateEmailSelecionado" v-on:input="$emit('input', templateEmailSelecionado)"></Seletor>
+        <Seletor label='Template de Email' :defaultValue="defaultValue" :listaOpcoes="templatesDeEmail" v-model="templateEmailSelecionado" v-on:input="$emit('input', templateEmailSelecionado)"></Seletor>
     </div>
 </template>
 
