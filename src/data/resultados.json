@@ -1,0 +1,10 @@
+{
+    "Satisfatorio": {
+        "id": 1,
+        "descricao": "Satisfatório"
+    },
+    "NaoSatisfatorio": {
+        "id": 2,
+        "descricao": "Não Satisfatório"
+    }
+}

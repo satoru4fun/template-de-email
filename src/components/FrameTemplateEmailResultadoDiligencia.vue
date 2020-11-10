@@ -4,34 +4,36 @@
             <SeletorGenero v-model="generoSelecionado" v-on:input="$emit('input', modeloEmail)"></SeletorGenero>
         </div>
         <div>
-            <Textbox label="Destino:" v-model="enderecoDestino" v-on:input="$emit('input', modeloEmail)"></Textbox>
+            <SeletorPerfil v-model="perfilSelecionado" v-on:input="$emit('input', modeloEmail)"></SeletorPerfil>
         </div>
         <div>
-            <Textbox label="Porta/Protocolo:" v-show="!icmpChecado" v-model="portaProtocolo" v-on:input="$emit('input', modeloEmail)"></Textbox>
+            <SeletorResultado v-model="resultadoSelecionado" v-on:input="$emit('input', modeloEmail)"></SeletorResultado>
         </div>
         <div>
-            <Checkbox label="ICMP" :isChecked="icmpChecado" v-model="icmpChecado" v-on:change="$emit('input', modeloEmail)"></Checkbox>
+            <Textbox label="Observação:" v-model="observacao" v-on:input="$emit('input', modeloEmail)"></Textbox>
         </div>
     </div>
 </template>
 
 <script>
 import SeletorGenero from './SeletorGenero.vue'
+import SeletorPerfil from './SeletorPerfil.vue'
+import SeletorResultado from './SeletorResultado.vue'
 import Textbox from './Textbox.vue'
-import Checkbox from './Checkbox.vue'
 
 export default {
     components: {
         SeletorGenero,
-        Textbox,
-        Checkbox
+        SeletorPerfil,
+        SeletorResultado,
+        Textbox
     },
     data () {
         return {
-            enderecoOrigem: null,
-            enderecoDestino: null,
-            portaProtocolo: null,
-            icmpChecado: false
+            generoSelecionado: null,
+            perfilSelecionado: null,
+            resultadoSelecionado: null,
+            observacao: 'A DPC não dispensa da apresentação dos documentos comprobatórios.'
         }
     },
     computed: {
@@ -40,26 +42,28 @@ export default {
                 assunto: null,
                 corpo: null
             }
-            modeloEmail.assunto = (this.enderecoOrigemComputado && this.enderecoDestinoComputado) ? 'Solicitação de Liberação no Firewall - '
-                + this.enderecoOrigemComputado + ' > '
-                + this.enderecoDestinoComputado : ''
-            modeloEmail.corpo = (this.enderecoOrigemComputado && this.enderecoDestinoComputado && this.portaProtocoloComputado) ? 'Prezada(o),<br><br>Solicito liberação de acesso:<ul><li>Origem: '
-                + this.enderecoOrigemComputado
-                + ';</li><li>Destino: '
-                + this.enderecoDestinoComputado
-                + ';</li><li>Porta: '
-                + this.portaProtocoloComputado
-                + '.</li></ul><br>' : ''
+            modeloEmail.assunto = 'RES: Diligência Prévia de Capacidade Técnica'
+            modeloEmail.corpo = (this.generoSelecionado && this.resultadoSelecionado && this.experienciaComputada) ? this.saudacaoComputada + ','
+                      + "<br><br>O resultado da Diligência Prévia de Capacidade Técnica foi \"<b>" + this.resultadoSelecionado + "</b>\".<br><br>"
+                      + this.generoSelecionado.toUpperCase() + " funcionári" + this.generoSelecionado + " indicad" + this.generoSelecionado
+                      + " pela AMcom possui formação superior completa e " + this.experienciaComputada
+                      + ".<br><br>Observações:<ul><li>"
+                      + this.observacaoComputada
+                              + "</li></ul><br>" : ''
             return modeloEmail
         },
-        enderecoOrigemComputado: function () {
-            return this.enderecoOrigem.toUpperCase().trim()
+        saudacaoComputada: function ()  {
+            var d = new Date();
+            var horas = d.getHours();
+            if     (horas < 12){ return "Bom dia" }
+            else if(horas < 19){ return "Boa tarde" }
+            else               { return "Boa noite" }
         },
-        enderecoDestinoComputado: function () {
-            return this.enderecoDestino.toUpperCase().trim()
+        experienciaComputada: function () {
+            return 'experiência na área técnica de TI ou correlatas'
         },
-        portaProtocoloComputado: function () {
-            return (this.icmpChecado) ? '<li>Protocolo: ICMP</li>' : this.portaProtocolo.trim()
+        observacaoComputada: function () {
+            return this.observacao.trim()
         }
     }
 }

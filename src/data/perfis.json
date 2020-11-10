@@ -1,0 +1,46 @@
+{
+    "GerenteDeProjetos": {
+        "id": 1,
+        "descricao": "Gerente de Projetos"
+    },
+    "ScrumMaster": {
+        "id": 2,
+        "descricao": "Scrum Master"
+    },
+    "ArquitetoSr": {
+        "id": 3,
+        "descricao": "Arquiteto (sênior)"
+    },
+    "DesignerDeProdutosPl": {
+        "id": 4,
+        "descricao": "Designer UX/UI (pleno)"
+    },
+    "ProgramadorSr": {
+        "id": 5,
+        "descricao": "Analista/Programador (sênior)"
+    },
+    "ProgramadorPl": {
+        "id": 6,
+        "descricao": "Analista/Programador (pleno)"
+    },
+    "ProgramadorJr": {
+        "id": 7,
+        "descricao": "Analista/Programador (júnior)"
+    },
+    "InfraAgilSr": {
+        "id": 8,
+        "descricao": "Infra Ágil (sênior)"
+    },
+    "InfraAgilPl": {
+        "id": 9,
+        "descricao": "Infra Ágil (pleno)"
+    },
+    "CientistaDeDadosSr": {
+        "id": 10,
+        "descricao": "Analista de Dados (sênior)"
+    },
+    "CientistaDeDadosPl": {
+        "id": 10,
+        "descricao": "Analista de Dados (pleno)"
+    }
+}
