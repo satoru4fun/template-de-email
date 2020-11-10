@@ -43,24 +43,34 @@ export default {
                 corpo: null
             }
             modeloEmail.assunto = 'RES: Diligência Prévia de Capacidade Técnica'
-            modeloEmail.corpo = (this.generoSelecionado && this.resultadoSelecionado && this.experienciaComputada) ? this.saudacaoComputada + ','
-                      + "<br><br>O resultado da Diligência Prévia de Capacidade Técnica foi \"<b>" + this.resultadoSelecionado + "</b>\".<br><br>"
-                      + this.generoSelecionado.toUpperCase() + " funcionári" + this.generoSelecionado + " indicad" + this.generoSelecionado
-                      + " pela AMcom possui formação superior completa e " + this.experienciaComputada
-                      + ".<br><br>Observações:<ul><li>"
-                      + this.observacaoComputada
-                              + "</li></ul><br>" : ''
+            modeloEmail.corpo = (this.resultadoSelecionadoComputadao && this.generoSelecionadoComputado && this.experienciaExigidaComputada) ?
+                this.saudacaoComputada
+                + ',<br><br>O resultado da Diligência Prévia de Capacidade Técnica foi "<b>' + this.resultadoSelecionadoComputadao
+                + '</b>".<br><br>'
+                + this.generoSelecionadoComputado.toUpperCase()
+                + ' funcionári' + this.generoSelecionadoComputado
+                + ' indicad' + this.generoSelecionadoComputado
+                + ' pela AMcom possui formação superior completa e ' + this.experienciaExigidaComputada
+                + '.<br><br>Observações:<ul><li>' + this.observacaoComputada
+                + "</li></ul><br>"
+                : ''
             return modeloEmail
         },
         saudacaoComputada: function ()  {
             var d = new Date();
             var horas = d.getHours();
-            if     (horas < 12){ return "Bom dia" }
-            else if(horas < 19){ return "Boa tarde" }
-            else               { return "Boa noite" }
+            if     (horas < 12){ return 'Bom dia' }
+            else if(horas < 19){ return 'Boa tarde' }
+            else               { return 'Boa noite' }
         },
-        experienciaComputada: function () {
-            return 'experiência na área técnica de TI ou correlatas'
+        resultadoSelecionadoComputadao: function () {
+            return JSON.parse(this.resultadoSelecionado).descricao
+        },
+        generoSelecionadoComputado: function () {
+            return JSON.parse(this.generoSelecionado).artigo
+        },
+        experienciaExigidaComputada: function () {
+            return JSON.parse(this.perfilSelecionado).experienciaExigida
         },
         observacaoComputada: function () {
             return this.observacao.trim()

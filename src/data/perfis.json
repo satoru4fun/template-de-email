@@ -1,46 +1,57 @@
 {
     "GerenteDeProjetos": {
         "id": 1,
-        "descricao": "Gerente de Projetos"
+        "descricao": "Gerente de Projetos",
+        "experienciaExigida": "mais de 6 anos de experiência profissional na área técnica de TI ou correlata, sendo 2 anos com desenvolvimento ágil"
     },
     "ScrumMaster": {
         "id": 2,
-        "descricao": "Scrum Master"
+        "descricao": "Scrum Master",
+        "experienciaExigida": "mais de 6 anos de experiência profissional na área técnica de TI ou correlata, sendo 2 anos com desenvolvimento ágil"
     },
     "ArquitetoSr": {
         "id": 3,
-        "descricao": "Arquiteto (sênior)"
+        "descricao": "Arquiteto (sênior)",
+        "experienciaExigida": "mais de 6 anos de experiência profissional na área técnica de TI ou correlata, sendo 2 anos com desenvolvimento ágil"
     },
     "DesignerDeProdutosPl": {
         "id": 4,
-        "descricao": "Designer UX/UI (pleno)"
+        "descricao": "Designer UX/UI (pleno)",
+        "experienciaExigida": "mais de 4 anos de experiência profissional na área técnica de TI ou correlata"
     },
     "ProgramadorSr": {
         "id": 5,
-        "descricao": "Analista/Programador (sênior)"
+        "descricao": "Analista/Programador (sênior)",
+        "experienciaExigida": "mais de 6 anos de experiência profissional na área técnica de TI ou correlata, sendo 2 anos com desenvolvimento ágil"
     },
     "ProgramadorPl": {
         "id": 6,
-        "descricao": "Analista/Programador (pleno)"
+        "descricao": "Analista/Programador (pleno)",
+        "experienciaExigida": "mais de 4 anos de experiência profissional na área técnica de TI ou correlata"
     },
     "ProgramadorJr": {
         "id": 7,
-        "descricao": "Analista/Programador (júnior)"
+        "descricao": "Analista/Programador (júnior)",
+        "experienciaExigida": "mais de 2 anos de experiência profissional na área técnica de TI ou correlata"
     },
     "InfraAgilSr": {
         "id": 8,
-        "descricao": "Infra Ágil (sênior)"
+        "descricao": "Infra Ágil (sênior)",
+        "experienciaExigida": "mais de 6 anos de experiência profissional na área técnica de TI ou correlata, sendo 2 anos com desenvolvimento ágil"
     },
     "InfraAgilPl": {
         "id": 9,
-        "descricao": "Infra Ágil (pleno)"
+        "descricao": "Infra Ágil (pleno)",
+        "experienciaExigida": "mais de 4 anos de experiência profissional na área técnica de TI ou correlata"
     },
     "CientistaDeDadosSr": {
         "id": 10,
-        "descricao": "Analista de Dados (sênior)"
+        "descricao": "Analista de Dados (sênior)",
+        "experienciaExigida": "mais de 6 anos de experiência profissional na área técnica de TI ou correlata, sendo 2 anos com desenvolvimento ágil"
     },
     "CientistaDeDadosPl": {
         "id": 10,
-        "descricao": "Analista de Dados (pleno)"
+        "descricao": "Analista de Dados (pleno)",
+        "experienciaExigida": "mais de 4 anos de experiência profissional na área técnica de TI ou correlata"
     }
 }

@@ -1,7 +1,7 @@
 <template>
     <div>
         {{ titulo }}
-        <SeletorTemplateEmail v-model="templateEmailSelecionado" v-on:input="$emit('input', templateEmailSelecionado)"></SeletorTemplateEmail>
+        <SeletorTemplateEmail v-model="templateEmailSelecionado" v-on:input="$emit('input', templateEmailSelecionadoComputado)"></SeletorTemplateEmail>
     </div>
 </template>
 
@@ -17,6 +17,11 @@ export default {
     },
     components: {
         SeletorTemplateEmail
+    },
+    computed: {
+        templateEmailSelecionadoComputado: function () {
+            return JSON.parse(this.templateEmailSelecionado).id
+        }
     }
 }
 </script>

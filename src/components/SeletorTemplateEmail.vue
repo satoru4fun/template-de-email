@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import templatesDeEmail from '../data/TemplatesDeEmail.json'
+import templatesDeEmail from '../data/templatesDeEmail.json'
 import Seletor from './Seletor.vue'
 
 export default {

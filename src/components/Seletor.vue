@@ -4,11 +4,11 @@
             {{ label }}
             <select v-on:input="$emit('input', $event.target.value)">
                 <option v-if="!!defaultValue" value="" disabled selected hidden>{{ defaultValue }}</option>
-                <option  v-for="opcao in listaOpcoes" v-bind:key="opcao.id" :value="opcao.id">{{ opcao.descricao }}</option>
+                <option v-for="opcao in listaOpcoes" v-bind:key="opcao.id" :value="JSON.stringify(opcao)">{{ opcao.descricao }}</option>
             </select>
         </label>
     </div>
-</template>
+</template> 
 
 <script>
 export default {
