@@ -46,25 +46,25 @@ export default {
                 assunto: null,
                 corpo: null
             }
-            modeloEmail.assunto = (this.cnameLimpo) ? 'Solicitação de DNS - ' + this.cnameLimpo.toUpperCase() : ''
-            modeloEmail.corpo = (this.url && this.homologacao && this.desenvolvimento && this.dnsInternoLimpo && this.dnsExternoLimpo) ? 'Prezada(o),'
+            modeloEmail.assunto = (this.cnameComputado) ? 'Solicitação de DNS - ' + this.cnameComputado.toUpperCase() : ''
+            modeloEmail.corpo = (this.url && this.dnsInternoComputado && this.dnsExternoComputado) ? 'Prezada(o),'
                 + '<br><br>Favor alterar o CNAME:<ul><li>'
                 + this.url
                 + this.homologacao
                 + this.desenvolvimento
                 + '</li></ul><br>Para apontar para:<ul>'
-                + this.dnsInternoLimpo
-                + this.dnsExternoLimpo
+                + this.dnsInternoComputado
+                + this.dnsExternoComputado
                 + '</ul><br>' : ''
             return modeloEmail
         },
         url: function () {
-            return (this.cnameLimpo && this.subdominioLimpo) ? this.cnameLimpo + '" no subdomínio "' + this.subdominioLimpo + '"' : ''
+            return (this.cnameComputado && this.subdominioComputado) ? this.cnameComputado + '" no subdomínio "' + this.subdominioComputado + '"' : ''
         },
-        cnameLimpo: function () {
+        cnameComputado: function () {
             return (this.cname) ? this.cname.trim() : ''
         },
-        subdominioLimpo: function () {
+        subdominioComputado: function () {
             return (this.subdominio) ? this.subdominio.trim() : ''
         },
         homologacao: function () {
@@ -73,10 +73,10 @@ export default {
         desenvolvimento: function () {
             return (this.desenvolvimentoChecado) ? ',</li><li>"dev-' + this.url : ''
         },
-        dnsInternoLimpo: function () {
+        dnsInternoComputado: function () {
             return (this.dnsInterno) ? '<li>DNS interno = ' + this.dnsInterno.trim() + '</li>' : ''
         },
-        dnsExternoLimpo: function () {
+        dnsExternoComputado: function () {
             return (this.dnsExterno) ? '<li>DNS externo = ' + this.dnsExterno.trim() + '</li>' : ''
         }
     }
