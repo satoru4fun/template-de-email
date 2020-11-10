@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <div class="form-group">
         <label>
             {{ label }}
-            <input type="text" :value="defaultValue" v-on:input="$emit('input', $event.target.value)">
+            <input class="form-control" type="text" :value="defaultValue" v-on:input="$emit('input', $event.target.value)">
         </label>
     </div>
 </template>

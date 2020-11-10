@@ -1,6 +1,6 @@
 <template>
-    <div>
-        {{ titulo }}
+    <div class="form-group row">
+        <h1>{{ titulo }}</h1>
         <SeletorTemplateEmail v-model="templateEmailSelecionado" v-on:input="$emit('input', templateEmailSelecionadoComputado)"></SeletorTemplateEmail>
     </div>
 </template>
