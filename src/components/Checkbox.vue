@@ -1,9 +1,7 @@
 <template>
     <div class="form-check">
-        <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" v-bind="{ checked: isChecked }" v-on:change="$emit('change', $event.target.checked)">
-            {{ label }}
-        </label>
+        <input id="checkbox" class="form-check-input" type="checkbox" v-bind="{ checked: isChecked }" v-on:change="$emit('change', $event.target.checked)">
+        <label for="checkbox" class="form-check-label">{{ label }}</label>
     </div>
 </template>
 

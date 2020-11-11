@@ -1,9 +1,9 @@
 <template>
-    <div class="form-group">
-        <label>
-            {{ label }}
-            <input class="form-control" type="text" :placeholder="placeholder" :value="defaultValue" v-on:input="$emit('input', $event.target.value)">
-        </label>
+    <div class="form-group row">
+        <label for="textbox" class="col-sm-2 col-form-label">{{ label }}</label>
+        <div class="col-sm-10">
+            <input id="textbox" class="form-control" type="text" :placeholder="placeholder" :value="defaultValue" v-on:input="$emit('input', $event.target.value)">
+        </div>
     </div>
 </template>
 
