@@ -7,7 +7,7 @@
             <Textbox label="Destino:" v-model="enderecoDestino" v-on:input="$emit('input', modeloEmail)"></Textbox>
         </div>
         <div>
-            <Textbox label="Porta/Protocolo:" v-show="!icmpChecado" v-model="portaProtocolo" v-on:input="$emit('input', modeloEmail)"></Textbox>
+            <Textbox label="Porta/Protocolo:" :placeholder="portaProtocoloPlaceholder" v-show="!icmpChecado" v-model="portaProtocolo" v-on:input="$emit('input', modeloEmail)"></Textbox>
         </div>
         <div>
             <Checkbox label="ICMP" :isChecked="icmpChecado" v-model="icmpChecado" v-on:change="$emit('input', modeloEmail)"></Checkbox>
@@ -29,6 +29,7 @@ export default {
             enderecoOrigem: null,
             enderecoDestino: null,
             portaProtocolo: null,
+            portaProtocoloPlaceholder: 'Ex.: 80 TCP/UDP e 443 TCP/UDP',
             icmpChecado: false
         }
     },

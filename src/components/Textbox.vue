@@ -2,7 +2,7 @@
     <div class="form-group">
         <label>
             {{ label }}
-            <input class="form-control" type="text" :value="defaultValue" v-on:input="$emit('input', $event.target.value)">
+            <input class="form-control" type="text" :placeholder="placeholder" :value="defaultValue" v-on:input="$emit('input', $event.target.value)">
         </label>
     </div>
 </template>
@@ -11,7 +11,8 @@
 export default {
     props: {
         label: String,
-        defaultValue: String
+        defaultValue: String,
+        placeholder: String
     }
 }
 </script>
