@@ -4,7 +4,6 @@
       <FrameSeletorTemplateEmail v-model="templateEmailSelecionado" v-on:input="limpaModeloEmail"></FrameSeletorTemplateEmail>
     </div>
     <div class="container">
-      <router-view></router-view>
       <FrameTemplateEmailDns v-if="templateEmailSelecionado==1" v-model="modeloEmail"></FrameTemplateEmailDns>
       <FrameTemplateEmailFirewall v-if="templateEmailSelecionado==2" v-model="modeloEmail"></FrameTemplateEmailFirewall>
       <FrameTemplateEmailResultadoDiligencia v-if="templateEmailSelecionado==3" v-model="modeloEmail"></FrameTemplateEmailResultadoDiligencia>

@@ -1,21 +1,20 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import TemplateEmailDns from '../views/TemplateEmailDns.vue'
+import Home from '@/views/Home.vue'
+import Erro404 from '@/views/Erro404.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/*',
+    path: '/',
     name: 'Home',
-    component: Home,
-    children: [
-      {
-        path:'dns',
-        component: TemplateEmailDns
-      }
-    ]
+    component: Home
+  },
+  {
+    path: '*',
+    name: 'Erro404',
+    component: Erro404
   }
 ]
 
