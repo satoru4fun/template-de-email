@@ -1,6 +1,10 @@
 <template>
-    <div>
-        <Seletor label='Resultado:' :defaultValue="defaultValue" :listaOpcoes="resultados" v-model="resultadoSelecionado" v-on:input="$emit('input', resultadoSelecionado)"></Seletor>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <Seletor label='Resultado:' :defaultValue="defaultValue" :listaOpcoes="resultados" v-model="resultadoSelecionado" v-on:input="$emit('input', resultadoSelecionado)"></Seletor>
+            </div>
+        </div>
     </div>
 </template>
 

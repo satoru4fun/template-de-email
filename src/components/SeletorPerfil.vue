@@ -1,6 +1,10 @@
 <template>
-    <div>
-        <Seletor label='Perfil:' :defaultValue="defaultValue" :listaOpcoes="perfis" v-model="perfilSelecionado" v-on:input="$emit('input', perfilSelecionado)"></Seletor>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <Seletor label='Perfil:' :defaultValue="defaultValue" :listaOpcoes="perfis" v-model="perfilSelecionado" v-on:input="$emit('input', perfilSelecionado)"></Seletor>
+            </div>
+        </div>
     </div>
 </template>
 

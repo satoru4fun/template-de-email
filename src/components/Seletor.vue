@@ -1,11 +1,15 @@
 <template>
-    <div class="form-group row">
-        <label for="seletor" class="col-sm-2 col-form-label">{{ label }}</label>
-        <div class="col-sm-10">
-            <select id="seletor" class="form-control" v-on:input="$emit('input', $event.target.value)">
-                <option v-if="!!defaultValue" value="" disabled selected hidden>{{ defaultValue }}</option>
-                <option v-for="opcao in listaOpcoes" v-bind:key="opcao.id" :value="JSON.stringify(opcao)">{{ opcao.descricao }}</option>
-            </select>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <label class="form-label" for="seletor">{{ label }}</label>
+            </div>
+            <div class="col">
+                <select id="seletor" class="form-select" v-on:input="$emit('input', $event.target.value)">
+                    <option v-if="!!defaultValue" value="" disabled selected hidden>{{ defaultValue }}</option>
+                    <option v-for="opcao in listaOpcoes" v-bind:key="opcao.id" :value="JSON.stringify(opcao)">{{ opcao.descricao }}</option>
+                </select>
+            </div>
         </div>
     </div>
 </template> 

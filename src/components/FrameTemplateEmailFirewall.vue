@@ -1,16 +1,24 @@
 <template>
-    <div>
-        <div>
-            <Textbox label="Origem:" v-model="enderecoOrigem" v-on:input="$emit('input', modeloEmail)"></Textbox>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <Textbox label="Origem:" v-model="enderecoOrigem" v-on:input="$emit('input', modeloEmail)"></Textbox>
+            </div>
         </div>
-        <div>
-            <Textbox label="Destino:" v-model="enderecoDestino" v-on:input="$emit('input', modeloEmail)"></Textbox>
+        <div class="row">
+            <div class="col">
+                <Textbox label="Destino:" v-model="enderecoDestino" v-on:input="$emit('input', modeloEmail)"></Textbox>
+            </div>
         </div>
-        <div>
-            <Textbox label="Porta/Protocolo:" :placeholder="portaProtocoloPlaceholder" v-show="!icmpChecado" v-model="portaProtocolo" v-on:input="$emit('input', modeloEmail)"></Textbox>
+        <div class="row">
+            <div class="col">
+                <Textbox label="Porta/Protocolo:" :placeholder="portaProtocoloPlaceholder" v-show="!icmpChecado" v-model="portaProtocolo" v-on:input="$emit('input', modeloEmail)"></Textbox>
+            </div>
         </div>
-        <div>
-            <Checkbox label="ICMP" :isChecked="icmpChecado" v-model="icmpChecado" v-on:change="$emit('input', modeloEmail)"></Checkbox>
+        <div class="row">
+            <div class="col">
+                <Checkbox label="ICMP" :isChecked="icmpChecado" v-model="icmpChecado" v-on:change="$emit('input', modeloEmail)"></Checkbox>
+            </div>
         </div>
     </div>
 </template>

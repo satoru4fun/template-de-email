@@ -6,18 +6,18 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-1">
+            <div class="col">
                 <label for="emailSuporte">Para:</label>
             </div>
-            <div id="emailSuporte" class="col-11">
+            <div id="emailSuporte" class="col">
                 {{ emailSuporte }}
             </div>
         </div>
         <div class="row">
-            <div class="col-1">
+            <div class="col">
                 <label for="emailCopia">CC:</label>
             </div>
-            <div id="emailCopia" class="col-11">
+            <div id="emailCopia" class="col">
                 <div class="row">
                     <div class="col">
                         {{ emailInfraestruturaCentralIT }}
@@ -36,17 +36,17 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-1">
+            <div class="col">
                 <label for="assunto">Assunto:</label>
             </div>
-            <div id="assunto" class="col-11" v-html="modeloEmail.assunto">
+            <div id="assunto" class="col" v-html="modeloEmail.assunto">
             </div>
         </div>
         <div class="row">
-            <div class="col-1">
+            <div class="col">
                 <label for="corpo">Corpo:</label>
             </div>
-            <div id="corpo" class="col-11" v-html="modeloEmail.corpo">
+            <div id="corpo" class="col" v-html="modeloEmail.corpo">
             </div>
         </div>
     </div>

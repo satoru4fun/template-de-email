@@ -1,22 +1,34 @@
 <template>
-    <div>
-        <div>
-            <Textbox label="CNAME" v-model="cname" v-on:input="$emit('input', modeloEmail)"></Textbox>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <Textbox label="CNAME" v-model="cname" v-on:input="$emit('input', modeloEmail)"></Textbox>
+            </div>
         </div>
-        <div>
-            <Checkbox label="Homologação" :isChecked="homologacaoChecado" v-model="homologacaoChecado" v-on:change="$emit('input', modeloEmail)"></Checkbox>
+        <div class="row">
+            <div class="col">
+                <Checkbox label="Homologação" :isChecked="homologacaoChecado" v-model="homologacaoChecado" v-on:change="$emit('input', modeloEmail)"></Checkbox>
+            </div>
         </div>
-        <div>
-            <Checkbox label="Desenvolvimento" :isChecked="desenvolvimentoChecado" v-model="desenvolvimentoChecado" v-on:change="$emit('input', modeloEmail)"></Checkbox>
+        <div class="row">
+            <div class="col">
+                <Checkbox label="Desenvolvimento" :isChecked="desenvolvimentoChecado" v-model="desenvolvimentoChecado" v-on:change="$emit('input', modeloEmail)"></Checkbox>
+            </div>
         </div>
-        <div>
-            <Textbox label="Subdomínio:" :defaultValue="subdominio" v-model="subdominio" v-on:input="$emit('input', modeloEmail)"></Textbox>
+        <div class="row">
+            <div class="col">
+                <Textbox label="Subdomínio:" :defaultValue="subdominio" v-model="subdominio" v-on:input="$emit('input', modeloEmail)"></Textbox>
+            </div>
         </div>
-        <div>
-            <Textbox label="DNS interno:" :defaultValue="dnsInterno" v-model="dnsInterno" v-on:input="$emit('input', modeloEmail)"></Textbox>
+        <div class="row">
+            <div class="col">
+                <Textbox label="DNS interno:" :defaultValue="dnsInterno" v-model="dnsInterno" v-on:input="$emit('input', modeloEmail)"></Textbox>
+            </div>
         </div>
-        <div>
-            <Textbox label="DNS externo:" :defaultValue="dnsExterno" v-model="dnsExterno" v-on:input="$emit('input', modeloEmail)"></Textbox>
+        <div class="row">
+            <div class="col">
+                <Textbox label="DNS externo:" :defaultValue="dnsExterno" v-model="dnsExterno" v-on:input="$emit('input', modeloEmail)"></Textbox>
+            </div>
         </div>
     </div>
 </template>

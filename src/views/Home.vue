@@ -1,16 +1,22 @@
 <template>
   <div class="container" id="app">
-    <div class="container">
-      <FrameSeletorTemplateEmail v-model="templateEmailSelecionado" v-on:input="limpaModeloEmail"></FrameSeletorTemplateEmail>
+    <div class="row">
+      <div class="col">
+        <FrameSeletorTemplateEmail v-model="templateEmailSelecionado" v-on:input="limpaModeloEmail"></FrameSeletorTemplateEmail>
+      </div>
     </div>
-    <div class="container">
-      <FrameTemplateEmailDns v-if="templateEmailSelecionado==1" v-model="modeloEmail"></FrameTemplateEmailDns>
-      <FrameTemplateEmailFirewall v-if="templateEmailSelecionado==2" v-model="modeloEmail"></FrameTemplateEmailFirewall>
-      <FrameTemplateEmailResultadoDiligencia v-if="templateEmailSelecionado==3" v-model="modeloEmail"></FrameTemplateEmailResultadoDiligencia>
-      <FrameTemplateEmailConviteGithub v-if="templateEmailSelecionado==4" v-model="modeloEmail"></FrameTemplateEmailConviteGithub>
+    <div class="row">
+      <div class="col">
+        <FrameTemplateEmailDns v-if="templateEmailSelecionado==1" v-model="modeloEmail"></FrameTemplateEmailDns>
+        <FrameTemplateEmailFirewall v-if="templateEmailSelecionado==2" v-model="modeloEmail"></FrameTemplateEmailFirewall>
+        <FrameTemplateEmailResultadoDiligencia v-if="templateEmailSelecionado==3" v-model="modeloEmail"></FrameTemplateEmailResultadoDiligencia>
+        <FrameTemplateEmailConviteGithub v-if="templateEmailSelecionado==4" v-model="modeloEmail"></FrameTemplateEmailConviteGithub>
+      </div>
     </div>
-    <div class="container">
-      <FrameEmailGerado v-if="modeloEmail" :modeloEmail="modeloEmail"></FrameEmailGerado>
+    <div class="row">
+      <div class="col">
+        <FrameEmailGerado v-if="modeloEmail" :modeloEmail="modeloEmail"></FrameEmailGerado>
+      </div>
     </div>
   </div>
 </template>

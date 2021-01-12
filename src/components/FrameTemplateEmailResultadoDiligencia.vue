@@ -1,16 +1,24 @@
 <template>
-    <div>
-        <div>
-            <SeletorGenero v-model="generoSelecionado" v-on:input="$emit('input', modeloEmail)"></SeletorGenero>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <SeletorGenero v-model="generoSelecionado" v-on:input="$emit('input', modeloEmail)"></SeletorGenero>
+            </div>
         </div>
-        <div>
-            <SeletorPerfil v-model="perfilSelecionado" v-on:input="$emit('input', modeloEmail)"></SeletorPerfil>
+        <div class="row">
+            <div class="col">
+                <SeletorPerfil v-model="perfilSelecionado" v-on:input="$emit('input', modeloEmail)"></SeletorPerfil>
+            </div>
         </div>
-        <div>
-            <SeletorResultado v-model="resultadoSelecionado" v-on:input="$emit('input', modeloEmail)"></SeletorResultado>
+        <div class="row">
+            <div class="col">
+                <SeletorResultado v-model="resultadoSelecionado" v-on:input="$emit('input', modeloEmail)"></SeletorResultado>
+            </div>
         </div>
-        <div>
-            <Textbox label="Observação:" v-model="observacao" v-on:input="$emit('input', modeloEmail)"></Textbox>
+        <div class="row">
+            <div class="col">
+                <Textbox label="Observação:" v-model="observacao" v-on:input="$emit('input', modeloEmail)"></Textbox>
+            </div>
         </div>
     </div>
 </template>

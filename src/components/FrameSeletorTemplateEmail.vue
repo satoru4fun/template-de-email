@@ -1,7 +1,15 @@
 <template>
-    <div class="form-group row">
-        <h1>{{ titulo }}</h1>
-        <SeletorTemplateEmail v-model="templateEmailSelecionado" v-on:input="$emit('input', templateEmailSelecionadoComputado)"></SeletorTemplateEmail>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>{{ titulo }}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <SeletorTemplateEmail v-model="templateEmailSelecionado" v-on:input="$emit('input', templateEmailSelecionadoComputado)"></SeletorTemplateEmail>    
+            </div>
+        </div>
     </div>
 </template>
 
