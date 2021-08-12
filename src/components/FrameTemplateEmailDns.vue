@@ -60,7 +60,7 @@ export default {
             }
             modeloEmail.assunto = (this.cnameComputado) ? 'Solicitação de DNS - ' + this.cnameComputado.toUpperCase() : ''
             modeloEmail.corpo = (this.url && this.dnsInternoComputado && this.dnsExternoComputado) ? 'Prezada(o),'
-                + '<br><br>Favor alterar o CNAME:<ul><li>'
+                + '<br><br>Favor criar/alterar o CNAME:<ul><li>'
                 + this.url
                 + this.homologacao
                 + this.desenvolvimento
