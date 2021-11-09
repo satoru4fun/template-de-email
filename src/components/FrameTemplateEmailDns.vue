@@ -60,11 +60,11 @@ export default {
             }
             modeloEmail.assunto = (this.cnameComputado) ? 'Solicitação de DNS - ' + this.cnameComputado.toUpperCase() : ''
             modeloEmail.corpo = (this.url && this.dnsInternoComputado && this.dnsExternoComputado) ? 'Prezada(o),'
-                + '<br><br>Favor criar/alterar o CNAME:<ul><li>'
-                + this.url
+                + '<br><br>Favor criar/alterar o CNAME:<ul>'
+                + this.producao
                 + this.homologacao
                 + this.desenvolvimento
-                + '</li></ul><br>Para apontar para:<ul>'
+                + '</ul><br>Para apontar para:<ul>'
                 + this.dnsInternoComputado
                 + this.dnsExternoComputado
                 + '</ul><br>' : ''
@@ -79,11 +79,14 @@ export default {
         subdominioComputado: function () {
             return (this.subdominio) ? this.subdominio.trim() : ''
         },
+        producao: function () {
+            return '<li>"' + this.url + '</li>'
+        },
         homologacao: function () {
-            return (this.homologacaoChecado) ? ',</li><li>"hom-' + this.url : ''
+            return (this.homologacaoChecado) ? '<li>"hom-' + this.url + '</li>' : ''
         },
         desenvolvimento: function () {
-            return (this.desenvolvimentoChecado) ? ',</li><li>"dev-' + this.url : ''
+            return (this.desenvolvimentoChecado) ? '<li>"dev-' + this.url + '</li>' : ''
         },
         dnsInternoComputado: function () {
             return (this.dnsInterno) ? '<li>DNS interno = ' + this.dnsInterno.trim() + '</li>' : ''
