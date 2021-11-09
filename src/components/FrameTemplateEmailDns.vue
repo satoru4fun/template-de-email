@@ -7,6 +7,11 @@
         </div>
         <div class="row">
             <div class="col">
+                <Checkbox label="Pré Produção" :isChecked="preProducaoChecado" v-model="preProducaoChecado" v-on:change="$emit('input', modeloEmail)"></Checkbox>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
                 <Checkbox label="Homologação" :isChecked="homologacaoChecado" v-model="homologacaoChecado" v-on:change="$emit('input', modeloEmail)"></Checkbox>
             </div>
         </div>
@@ -46,6 +51,7 @@ export default {
         return {
             cname: null,
             subdominio: 'sme.prefeitura.sp.gov.br',
+            preProducaoChecado: true,
             homologacaoChecado: true,
             desenvolvimentoChecado: true,
             dnsInterno: '10.50.1.189',
@@ -62,6 +68,7 @@ export default {
             modeloEmail.corpo = (this.url && this.dnsInternoComputado && this.dnsExternoComputado) ? 'Prezada(o),'
                 + '<br><br>Favor criar/alterar o CNAME:<ul>'
                 + this.producao
+                + this.preProducao
                 + this.homologacao
                 + this.desenvolvimento
                 + '</ul><br>Para apontar para:<ul>'
@@ -81,6 +88,9 @@ export default {
         },
         producao: function () {
             return '<li>"' + this.url + '</li>'
+        },
+        preProducao: function () {
+            return (this.preProducaoChecado) ? '<li>"pre-' + this.url + '</li>' : ''
         },
         homologacao: function () {
             return (this.homologacaoChecado) ? '<li>"hom-' + this.url + '</li>' : ''

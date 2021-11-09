@@ -30,6 +30,11 @@
                 </div>
                 <div class="row">
                     <div class="col">
+                        {{ emailDITEC }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
                         {{ emailSolicitante }}
                     </div>
                 </div>
@@ -66,7 +71,8 @@ export default {
             emailSuporte: 'suporte@sme.prefeitura.sp.gov.br',
             emailInfraestruturaCentralIT: 'infraestrutura.smesp@centralit.com.br',
             emailDISIS: 'idscotic@sme.prefeitura.sp.gov.br',
-            emailSolicitante: 'solicitante(s)'
+            emailDITEC: 'paulo.santos@sme.prefeitura.sp.gov.br',
+            emailSolicitante: 'sme.devops@amcom.com.br'
         }
     }
 }
